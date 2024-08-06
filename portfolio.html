@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="this is the personal portfolio site of the web developer and designer Edosewele Emmanuel Akharele, with the business name of shekinahs_dev">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- FAVICON LINK -->
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
+    <title>Shekinahs_dev Portfolio</title>
+    <style>
+        
+        :root {
+            --page-bg: #181818;
+            --fnt-clr: #e6e6e6;
+            --accnt-clr-300: #323232;
+            --accnt-clr-200: #4b4b4b;
+            --accnt-clr-100: #656565;
+        }
+
+        * {
+            color-scheme: dark;
+        }
+        
+        body {
+          font-family: "Playwrite NG Modern", cursive;
+          font-optical-sizing: auto;
+          font-weight: 100;
+          font-style: normal;
+          /* background: var(--page-bg) */
+          color: var(--fnt-clr);
+          position: relative;
+        }
+
+        body a {
+            color: var(--fnt-clr);
+        }
+
+        .header {
+            margin: 0 5%;
+            width: 90%;
+            height: 100px;
+        }
+
+        .logo {
+            width: 10rem;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+        }
+
+        .navbar li {
+            position: relative;
+            margin-left: 20px;
+            z-index: 2;
+            font-weight: 400;
+            /* outline: 1px solid var(--accnt-clr-100); */
+        }
+        
+        .navbar li span {
+            position: absolute;
+            font-size: 3.5rem;
+            top: -25px;
+            left: 10px;
+            z-index: -10;
+            cursor: default;
+        }
+        
+        .active span{
+            color: var(--accnt-clr-100);
+        }
+
+        .container {
+            height: calc(100vh - 100px);
+            width: 100%;
+        }
+
+        .svg_container {
+            display: grid;
+            place-content: center;
+            height: 80px;
+        }
+        
+        .loader_container {
+            display: grid;
+            place-content: center;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: var(--page-bg);
+        }
+
+        .loader {
+            display: grid;
+            place-content: center;
+            position: static;
+            width: 100px;
+        }
+
+        svg {
+            width: 20rem;
+            font-weight: 500;
+        }
+
+        svg text {
+            font-size: 2rem;
+            stroke-width: 1;
+            letter-spacing: -3px;
+        }
+
+        svg text.text-body {
+            stroke: #ff24;
+            stroke: var(--fnt-clr);
+            animation: 3s linear animateStroke;
+            fill: var(--fnt-clr);
+            stroke: transparent;
+            stroke-width: 0;
+            stroke-dashoffset: -25%;
+            stroke-dasharray: 32% 0;
+        } 
+
+        @keyframes animateStroke {
+            0% {
+                fill: transparent;
+                stroke: var(--fnt-clr);
+                stroke-width: 1;
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 32%;
+            }
+            
+            50% {
+                fill: transparent;
+                stroke: var(--fnt-clr);
+                stroke-width: 1;
+            }
+
+            80%, 100% {
+                fill: var(--fnt-clr);
+                stroke: transparent;
+                stroke-width: 0;
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 32% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header flex-justify_1">
+        <div class="logo">
+            <a href="#">
+                <img src="./img/header_img.jpeg" alt="">
+            </a>
+        </div>
+
+        <ul class="navbar">
+            <li class="active"><a href="#">Home</a>
+                 <span>.</span>
+                </li>
+            <li><a href="#">Work</a> 
+                <span>.</span>
+            </li>
+            <li><a href="#">About</a> 
+                <span>.</span>
+            </li>
+            <li><a href="#">Contact</a> 
+                <span>.</span>
+            </li>
+        </ul>
+    </header>
+
+
+    <div class="container">
+        <div class="svg_container">
+            <svg viewbox="0 0 400 160">
+                <text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
+                    shekinahs_dev
+                </text>
+            </svg>
+        </div>
+        <div class="description">
+            <p class="desc">
+                <!-- Welcome to my Portfolio! <br> I am a Web Developer & Developer passionate about creating stunning and functional websites. <br> -->
+                Welcome! <br>
+                I am Emmanuel Ak. <br>
+                A Web Developer & Designer <br>
+                passionate about creating stunning and functional websites that captures the attention of the user while still delivering the full intention of the site's creation 
+            </p>
+    
+            <a href="" class="btn">View my work</a>
+    
+            <div class="social_media">
+                <!-- <img src="./brands/github.svg" alt="github logo" width="20px">
+                <img src="./brands/instagram.svg" alt="instagram logo" width="20px">
+                <img src="./brands/x-twitter.svg" alt="x-twitter logo" width="20px">
+                <img src="./brands/linkedin-in.svg" alt="linkedin logo" width="20px">
+                <img src="./brands/upwork.svg" alt="upwork logo" width="20px"> -->
+                <a target="_blank" href="https://x.com/Ehiz_Ak">X</a>
+                <a target="_blank" href="https://www.instagram.com/shekinahs_delegate/?hl=en">IG</a>
+                <a target="_blank" href="www.linkedin.com/in/edosewele-akharele-749b462a0">LI</a>
+                <a target="_blank" href="https://github.com/gilbertjnr">GH</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- - 
+     
+    👋 Hi, I’m @gilbertjnr
+    - 👀 I’m interested in ...
+    - 🌱 I’m currently learning ...
+    - 💞️ I’m looking to collaborate on ...
+    - 📫 How to reach me ...
+    - 😄 Pronouns: ...
+    - ⚡ Fun fact: ...
+    
+    gilbertjnr/gilbertjnr is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+    You can click the Preview link to take a look at your changes.
+ -->
+
+ <!--
+    ~ PROFILE LINKS ~
+      -------------
+
+    X - https://x.com/Ehiz_Ak
+    LinkedIn - www.linkedin.com/in/edosewele-akharele-749b462a0
+    Instagram - https://www.instagram.com/shekinahs_delegate/?hl=en
+    Github - https://github.com/gilbertjnr
+  -->
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    <!-- loader from https://lottie.host/9c1118c3-801e-462f-96ff-93fca3f5e050/XlR5loMulM.json -->
+     <div class="loader_container">
+         <dotlottie-player src="https://lottie.host/9c1118c3-801e-462f-96ff-93fca3f5e050/XlR5loMulM.json" background="transparent" speed="2" style="width: 150px; height: 300px;" class="loader" loop autoplay></dotlottie-player>
+     </div>
+</body>
+</html>

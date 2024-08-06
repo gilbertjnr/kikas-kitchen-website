@@ -1,0 +1,219 @@
+body {
+    background-color: var(--clr-bg);
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    --border-radius: 8px;
+
+    /* Not Needed Stylings */
+}
+
+.return_arrow {
+    /* position: absolute; */
+    z-index: 100;
+    width: 30px;
+    height: 30px;
+    border: 2px solid darkslategrey;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-block: 8px;
+    margin-inline-start: 10px;
+}
+
+.return_arrow:hover{border: 2px solid rgba(255, 143, 14, 0.5);}
+
+.return_arrow:hover #svg_arrow { fill: #fff; }
+
+.return_arrow svg{
+    fill: #4b4b4b;
+    width: 20px;
+    height: 20px;
+    transition: var(--transition)
+}
+
+.big_menu_card {
+    width: 99%;
+    min-width: 99%;
+    overflow-y: scroll;
+    margin: auto;
+    position: relative;
+    flex-wrap: wrap;
+    border-radius: var(--border-radius);
+    
+    /* Not Needed Styling */
+    overflow: hidden;
+}
+
+.img_container {
+    /* width: 45%; */
+    max-width: 580px;
+    min-width: 420px;
+    
+    height: 70%;
+    flex: .7;
+    
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    /* Not Needed Styling */
+}
+
+.catalog_image {
+    height: 100%;
+    transition: var(--transition);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.catalog_image:hover {
+    opacity: 0.9;
+}
+
+img {
+    width: 100%;
+}
+
+.catalog_dots{
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: absolute;
+    bottom: 10%;
+    right: 40%;
+    z-index: 3;
+
+    /* Not Needed Styling */
+    /* outline: var(--outline); */
+}
+
+.catalog_dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff86;
+}
+
+span.active {
+    background: #fff;
+}
+
+.catalog_arrows {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    fill: #fff;
+}
+
+.catalog_arrow {
+    width: 2rem;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid rgba(160, 81, 45, 0.257);
+    border-radius: 50%;
+    fill: #ffffff;
+
+    background-color: #74707045;
+    background: #00000091;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.catalog_heading {
+    position: absolute;
+    bottom: 20%;
+    align-content: center;
+    right: 10%;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2rem;
+
+    background: rgba(160, 81, 45, 0.843);
+    border-radius: 16px;
+    padding: 5px 10px;
+    width: fit-content;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: var(--outline);
+    z-index: 3;
+    transition: var(--transition);
+}
+
+.img_container:hover .catalog_heading {
+    /* display: none; */
+    background: rgb(143, 67, 32);
+}
+
+.catalog_arrow:hover{
+    fill: #9c9a9a;
+}
+
+hr {
+    transform: rotate(90deg) translateX(-50px);
+    background-color: red;
+}
+
+.box_container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.right_side_menu {
+    width: 50%;
+    height: auto;
+    display: flex;
+    display: grid;
+    gap: 1.5rem;
+    margin-inline: 15px;
+    /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); */
+    
+    outline: var(--outline);
+}
+
+.menuCard_img > img {
+    width: 130px;
+    height: 130px;
+} 
+
+.menu_cards:is(.not_now) {
+    visibility: hidden;
+    margin: 20px auto;
+    outline: var(--outline);
+    padding: 20px;
+}
+
+.menu_cards:not(.not_now) {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    outline: var(--outline);
+    overflow: hidden;
+}
+.menu_cards:not(.not_now) img {
+    /* display: none; */
+    height: fit-content;
+    width: 150px;
+    transform: translateY(-25px);
+
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Booking page for Reservation with the Kika's Kitchen Restaurant establishment">
+        <link rel="stylesheet" href="styles.css">
+        <title>Booking Page</title>
+        <style>
+            :root {
+                --gray-tint-20: #444546;
+                --gray-tint-10: #2c2d2f;
+                --bdr-colr: #e07c2a;
+                --accent-tint-90: #EAF6F8;
+                --border: 1px solid #D11F3E;
+                --input-bdr: 2px solid var(--accent-tint-90);
+                --transition: all 300ms ease-in-out;
+                --shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+                --arrow-bg: rgba(83, 83, 83, 0.753);
+                --form-bdr:3px solid sienna;
+            }
+            
+
+            body {
+                position: relative;
+            }
+
+            .back_arrow {
+                border: var(--border);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                top: 10px;
+                background-color: var(--arrow-bg);
+                box-shadow: var(--shadow);
+            }
+
+            .back_arrow {
+                position: absolute;
+                z-index: 5;
+            }
+
+            .back_arrow svg {
+                fill: var(--bdr-colr);
+                width: 20px;
+                transition: var(--transition);
+            }
+
+            .back_arrow:hover svg {
+                opacity: 0.8;
+            }
+
+            .container {
+                height: 100vh;
+                background-color: var(--gray-tint-10);
+                z-index: 2;
+            }
+
+            .alias {
+                display: block;
+                text-align: center;
+                font-weight: normal;
+                color: var(--accent-tint-90);
+                font-size: 2rem;
+                font-family: serif;
+                z-index: inherit;
+            }
+
+            .main_form {
+                display: flex;
+                min-width: 70%;
+                border: var(--form-bdr);
+                border-radius: 16px;
+                overflow: hidden;
+                margin: auto;
+                margin-block: 5rem;
+                height: 60vh;
+                position: relative;
+                background: var(--accent-tint-90);
+                flex-wrap: wrap;
+                padding: 5px;
+                z-index: inherit;
+            }
+
+            .first_head {
+                visibility: hidden;
+            }
+            
+            .img_container {
+                position: relative;
+                width: 60%;
+                min-width: 22rem;
+                height: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .img_container img {
+                aspect-ratio: 11 / 9;
+                width: 100%;
+                height: 100%;
+            }
+
+            .booking_form {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                padding-block: 20px;
+                min-width: 15rem;
+            }
+
+            .booking_form > div {
+                position: relative;
+            }
+            
+            label {
+                position: absolute;
+                top: 2px;
+                left: 1.75rem;
+                font-size: .8rem;
+                color: var(--gray-tint-20);
+            }
+
+            input {
+                border: none;
+                border-bottom: 2px solid #333;
+                width: 80%;
+                margin: 40px;
+                margin-block: 1.05rem;
+                padding-block: 5px;
+                font-size: 1.01rem;
+                background: transparent;
+                transition: var(--transition);
+                outline: none;
+            }
+
+            input:active  {
+                transform: rotateY(30deg);
+                scale: 1.1;
+            }
+
+            .btn1 {
+                width: 80%;
+                margin: auto;
+                cursor: pointer;
+                border: none;
+            }
+            .btn a {
+                width: 60%;
+                margin: auto;
+                cursor: pointer;
+            } 
+
+            input[id="specialReq"] {
+                font-size: 14px;
+                font-weight: normal;
+            }
+
+            .img_container_sm {
+                width: 100%;
+                height: 100vh;
+                border: var(--border);
+                position: absolute;
+                z-index: 1;
+                visibility: hidden;
+
+            }
+            
+            .img_container_sm img {
+                width: 100%;
+                height: 100%;
+            }
+
+            /* MEDIA QUERIES */
+            /* Small Screens: Tablet */
+
+            @media (width <= 680px) {
+                .container {
+                    width: 100%;
+                }
+
+                .main_form {
+                    width: 320px;
+                    height: 87vh;
+                    margin: auto;
+                    margin-block: 50px;
+                }
+
+                .booking_form {
+                    width: 100vw;
+                    height: 70vh;
+                    margin-block: 1rem;
+                    margin: auto;
+                }
+
+                .img_container {
+                    height: 12rem;
+                    height: 15rem;
+                    min-width: 100%;
+                    margin: auto;
+                    margin-block: 0;
+                }
+
+
+                .booking_form {
+                    margin-block: 0;
+                    height: fit-content;
+                    margin-inline-start: -30px;
+                }
+                
+                .btn.btn1 {
+                    margin-block: 0;
+                    top: 90px;
+                    left: 10%;
+                    max-width: 200px;
+                    width: 80%;
+                }      
+            }
+
+            /* Smaller Phone Screen */
+            @media (width <= 450px) {
+                .first_head {
+                    visibility: visible;
+                    font-size: 4rem;
+                    text-align: center;
+                    padding-bottom: 60px;
+                }
+
+                .alias {
+                    font-weight: bolder;
+                    font-family: sans-serif;
+                }
+                
+                .img_container {
+                    display: none;
+                }
+                
+                .main_form {
+                    width: 350px;
+                    height: max-content;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 30px 10px;
+                    background: transparent;
+                    backdrop-filter: blur(100px);
+                }
+
+                .booking_form {
+                    padding-block: 20px;
+                    height: fit-content;
+                }
+                
+                .booking_form div label {
+                    font-size: 1rem;
+                    color: var(--accent-tint-90);
+                    top: 0;
+                    left: 30px;
+                }
+
+                .booking_form input {
+                    color: var(--accent-tint-90);
+                    font-weight: bold;
+                    padding: 8px 16px;
+                }
+
+                input:focus {
+                    border-bottom: 2px solid var(--accent-tint-90);
+                    border-bottom: var(--input-bdr);
+                }
+
+                .img_container_sm {
+                    visibility: visible;
+                    background-position: 0px 10px;
+                    background-position: center;
+                    width: 100%;
+                    height: 100vh;
+                }
+
+                .back_arrow {
+                    border: var(--border);
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    top: 10px;
+                    background-color: rgba(83, 83, 83, 0.753);
+                    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+                }
+            }
+        </style>
+</head>
+<body>
+
+    <div class="back_arrow flex-group-1">
+
+        <a href="./index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </div>
+
+    <div class="img_container_sm">
+        <img src="./img/reserve_pic.jpg" alt="kiks_img">
+    </div>
+
+
+
+    <div class="container grid_center">
+        <h2 class="alias">Make a Reservation!</h2>
+        
+        <section class="main_form">
+
+            <div class="img_container">
+                <img src="./img/reserve_pic.jpg" alt="kiks_img">
+            </div>
+
+            <div class="first_head">
+                <h3 id="logo">
+                    kk
+                </h3>
+            </div>
+            
+
+            <form action="post" class="booking_form">
+
+                <div id="full_name">
+
+                    <label for="fullName">
+                        Fullname:
+                    </label>
+    
+                    <input type="text" name="fullName" required id="fullName">
+
+                </div>
+
+                <div id="seats_Number">
+
+                    <label for="seatsNumber">
+                        Seats Needed: (table for?)
+                    </label>
+
+                    <input type="number" name="seatsNumber" required id="seatsNumber">
+                    
+                </div>
+                
+                <div id="resrv_time">
+
+                    <label for="time">
+                        Date and Time:
+                    </label>
+    
+                    <input type="datetime-local" name="time" required id="time">
+
+                </div>
+
+                <div id="special_Req">
+
+                    <label for="specialReq">
+                        Special request? <span>(optional)</span>
+                    </label>
+    
+                    <input type="text" name="specialReq" required id="specialReq">
+
+                </div>
+
+                <button class="btn btn1">Submit</button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
